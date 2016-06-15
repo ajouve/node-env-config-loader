@@ -6,7 +6,7 @@ function load() {
     var config = _loadFile('config.json')
     var envConfig = _loadFile('config_' + process.env.APPLICATION_ENV + '.json')
 
-    return _.defaults(_getEnvironmentVariablesConfig(), _.merge(config, envConfig), _getExtraConfig());
+    return _.merge(_getExtraConfig(), config, envConfig, _getEnvironmentVariablesConfig());
 }
 
 function _loadFile(name) {
