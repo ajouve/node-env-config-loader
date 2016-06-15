@@ -46,4 +46,11 @@ describe('Config', function(){
         assert.equal('testValue', config.testKey);
         assert.equal('testValue', config.test.key);
     });
+
+    it('Should override arrays', function(){
+        process.chdir('test/dataSet1');
+        process.env.APPLICATION_ENV = 'test4';
+        var config = require('../index.js');
+        assert.deepEqual([{name: 'newElement1'}, {name: 'elem2'}], config.array);
+    });
 });

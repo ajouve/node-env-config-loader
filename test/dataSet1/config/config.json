@@ -3,5 +3,9 @@
     "key": {
         "key1": "value1",
         "key2": "value2"
-    }
+    },
+    "array": [
+        {"name": "elem1"},
+        {"name": "elem2"}
+    ]
 }
