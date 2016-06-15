@@ -28,7 +28,7 @@ function _getEnvironmentVariablesConfig() {
     var applicationKey = _getApplicationName().replace(/-/g, '_') + '_'
     _.forEach(process.env, function(value, key){
         if (key.indexOf(applicationKey) != 0) return;
-        var path = key.replace(applicationKey, '').replace('_', '.')
+        var path = key.replace(applicationKey, '').replace(/_/g, '.')
         _.set(config, path, value);
     })
 

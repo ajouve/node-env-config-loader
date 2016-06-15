@@ -41,10 +41,12 @@ describe('Config', function(){
 
     it('Should add the environment variables', function(){
         process.env.node_env_config_loader_testKey = 'testValue';
-        process.env.node_env_config_loader_test_key = 'testValue';
+        process.env.node_env_config_loader_test_key1 = 'testValue';
+        process.env.node_env_config_loader_test_key2_key21 = 'testValue';
         var config = require('../index.js');
         assert.equal('testValue', config.testKey);
-        assert.equal('testValue', config.test.key);
+        assert.equal('testValue', config.test.key1);
+        assert.equal('testValue', config.test.key2.key21);
     });
 
     it('Should override with environment variables', function(){
