@@ -36,7 +36,7 @@ function _getEnvironmentVariablesConfig() {
 }
 
 function _getApplicationName() {
-    return process.env.npm_package_name || '';
+    return process.env.npm_package_name || process.env.name || '';
 }
 
 module.exports = load();
