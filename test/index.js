@@ -32,6 +32,13 @@ describe('Config', function(){
         assert.equal('newTestValue', config.testKey);
     });
 
+    it('Should merge the environment config', function(){
+        process.chdir('test/dataSet1');
+        process.env.APPLICATION_ENV = 'test3';
+        var config = require('../index.js');
+        assert.deepEqual({key1:'value1', key2: 'newValue2'}, config.key);
+    });
+
     it('Should add the environment variables', function(){
         process.env.node_env_config_loader_testKey = 'testValue';
         process.env.node_env_config_loader_test_key = 'testValue';
