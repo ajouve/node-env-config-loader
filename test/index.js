@@ -47,6 +47,13 @@ describe('Config', function(){
         assert.equal('testValue', config.test.key);
     });
 
+    it('Should override with environment variables', function(){
+        process.env.node_env_config_loader_testKey = 'newTestValue';
+        process.chdir('test/dataSet1');
+        var config = require('../index.js');
+        assert.equal('newTestValue', config.testKey);
+    });
+
     it('Should override arrays', function(){
         process.chdir('test/dataSet1');
         process.env.APPLICATION_ENV = 'test4';
