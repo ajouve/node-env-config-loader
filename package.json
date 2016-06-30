@@ -1,6 +1,6 @@
 {
   "name": "node-env-config-loader",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Load node config from environment variables",
   "main": "index.js",
   "scripts": {

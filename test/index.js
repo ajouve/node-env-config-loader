@@ -62,4 +62,11 @@ describe('Config', function(){
         var config = require('../index.js');
         assert.deepEqual([{name: 'newElement1'}, {name: 'elem2'}], config.array);
     });
+
+    it('Should override if specified', function(){
+        process.chdir('test/dataSet1');
+        process.env.APPLICATION_ENV = 'test5';
+        var config = require('../index.js');
+        assert.deepEqual({"key1": "value2"}, config.key);
+    });
 });

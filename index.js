@@ -6,6 +6,12 @@ function load() {
     var config = _loadFile('config.json')
     var envConfig = _loadFile('config_' + process.env.APPLICATION_ENV + '.json')
 
+    if (envConfig.override) {
+        envConfig.override.forEach(function(element){
+            delete config[element];
+        })
+    }
+
     return _.merge(_getExtraConfig(), config, envConfig, _getEnvironmentVariablesConfig());
 }
 
