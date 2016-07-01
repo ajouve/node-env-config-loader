@@ -30,6 +30,28 @@ For example if your application name is `my-app` and you have the following vari
          }
      }
 
+## Override a key
+
+if you have a config.json
+
+    {
+        "key1": {
+            "key11": "value1",
+            "key12": "value2"
+        }
+    }
+    
+and a config_APPLICATION_ENV.json
+
+    {
+        "key1": {
+            "key13": "value1"
+        }
+        "override": ["key1"]
+    }
+    
+`key1` will be `{"key13": "value1"}`
+
 ## Extra configuration
 
 The application name will be automatically added under the `name` key.
