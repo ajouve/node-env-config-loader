@@ -9,7 +9,7 @@ describe('Config', function(){
 
     it('Should not get the config from files', function(){
         var config = require('../index.js');
-        assert.deepEqual({ name: 'node-env-config-loader' }, config);
+        assert.deepEqual({ name: 'node-env-config-loader', applicationEnvironment: 'development' }, config);
     });
 
     it('Should get the default config', function(){
@@ -22,6 +22,7 @@ describe('Config', function(){
         process.chdir('test/dataSet1');
         process.env.APPLICATION_ENV = 'test1';
         var config = require('../index.js');
+        assert.equal('test1', config.applicationEnvironment);
         assert.equal('bar', config.foo);
     });
 

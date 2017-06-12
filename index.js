@@ -25,7 +25,8 @@ function _loadFile(name) {
 
 function _getExtraConfig() {
     return {
-        name: _getApplicationName()
+        name: _getApplicationName(),
+        applicationEnvironment: process.env.APPLICATION_ENV || 'development'
     };
 }
 

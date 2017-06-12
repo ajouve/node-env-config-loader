@@ -1,5 +1,7 @@
 # Node env config loader
 
+![travis](https://api.travis-ci.org/ajouve/node-env-config-loader.svg?branch=master "Travis")
+
 Load config from files and environment.
 
 ## Default config file
